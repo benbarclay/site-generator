@@ -1,0 +1,12 @@
+{
+  "name": "Site Generator",
+  "private": true,
+  "devDependencies": {
+    "metalsmith": "^0.8.1",
+    "metalsmith-collections": "^0.4.1",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-permalinks": "^0.3.2",
+    "metalsmith-templates": "^0.5.2",
+    "mustache": "^0.8.2"
+  }
+}
