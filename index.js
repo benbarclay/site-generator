@@ -1,17 +1,23 @@
-var Metalsmith = require('metalsmith');
+/*eslint-env node*/
+'use strict';
+
+var metalsmith = require('metalsmith');
 var collections = require('metalsmith-collections');
 var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
+var ignore = require('metalsmith-ignore');
+var assets = require('metalsmith-assets');
 
-Metalsmith(__dirname)
+metalsmith(__dirname)
   .clean(false)
   .destination('../benbarclay.github.com')
+  .use(ignore('.DS_Store'))
   .use(collections({
-    "posts":  {
-      "pattern": "posts/*.md",
-      "sortBy": "date",
-      "reverse": true
+    'posts': {
+      'pattern': 'posts/*.md',
+      'sortBy': 'date',
+      'reverse': true
     }
   }))
   .use(markdown())
@@ -20,29 +26,20 @@ Metalsmith(__dirname)
   }))
   .use(templates({
     engine: 'mustache',
-    default: 'post.mustache'
+    default: 'post.mustache',
+    partials: {
+      header: 'header',
+      footer: 'footer'
+    }
   }))
-  .use(index)
-  .use(debug)
-  .build();
-
-function index(files, metalsmith, done) {
-  files['index.html'] = files['index/index.html'];
-  delete files['index/index.html'];
-
-  if (files['index/.DS_Store']) {
-    delete files['index/.DS_Store'];
-  }
-
-  done();
-}
-
-function debug(files, metalsmith, done) {
-  //console.log(files);
-  //console.log(metalsmith);
-  //console.log(metalsmith.metadata());
-  //Object.keys(files).forEach(function(file){
-    //console.log(files[file]);
-  //});
-  done();
-}
+  .use(assets({
+    source: './assets',
+    destination: './assets'
+  }))
+  .build(function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Site Built');
+    }
+  });

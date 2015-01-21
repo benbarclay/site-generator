@@ -1,4 +1,4 @@
-benbarclay.github.com
+Site Generator
 =====================
 
-Blog
+Metalsmith site generator + source content files for my personal website
