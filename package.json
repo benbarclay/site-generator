@@ -1,16 +1,22 @@
 {
   "name": "siteGenerator",
   "private": true,
+  "scripts": {
+    "build": "node index.js",
+    "test": "node tests/spellcheck.js"
+  },
   "devDependencies": {
+    "glob": "^5.0.2",
     "metalsmith": "^1.0.1",
+    "metalsmith-assets": "^0.1.0",
     "metalsmith-collections": "^0.6.0",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.4.0",
+    "metalsmith-s3": "0.0.2",
     "metalsmith-templates": "^0.6.0",
-    "mustache": "^0.8.2"
-  },
-  "dependencies": {
-    "metalsmith-assets": "^0.1.0"
+    "mustache": "^0.8.2",
+    "nodehun": "^2.0.2",
+    "nodehun-sentences": "^1.0.1"
   }
 }
