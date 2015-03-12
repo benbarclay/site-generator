@@ -8,7 +8,6 @@ var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 var ignore = require('metalsmith-ignore');
 var assets = require('metalsmith-assets');
-var s3 = require('metalsmith-s3');
 
 metalsmith(__dirname)
   .clean(false)
