@@ -10,7 +10,7 @@ Create a new project: `npm init`, `npm install metalsmith --save-dev`
 
 From there on, the [getting started docs](http://www.metalsmith.io/#install-it) get a little more hazy.
 
-Your best bet is to have a look at the [examples](https://github.com/segmentio/metalsmith/tree/master/examples) in the GitHub repo to get an idea of a few different ways you can configure it. I used the [static site](https://github.com/segmentio/metalsmith/tree/master/examples/static-site), [Wintersmith](https://github.com/segmentio/metalsmith/tree/master/examples/wintersmith) and [Jekyll](https://github.com/segmentio/metalsmith/tree/master/examples/jekyll) examples to get going.
+Your best bet is to have a look at the [examples](https://github.com/segmentio/metalsmith/tree/master/examples) in the GitHub repository to get an idea of a few different ways you can configure it. I used the [static site](https://github.com/segmentio/metalsmith/tree/master/examples/static-site), [Wintersmith](https://github.com/segmentio/metalsmith/tree/master/examples/wintersmith) and [Jekyll](https://github.com/segmentio/metalsmith/tree/master/examples/jekyll) examples to get going.
 
 Metalsmith has two options for configuring it's behaviour:
 
