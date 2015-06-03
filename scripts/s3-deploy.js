@@ -10,6 +10,7 @@ glob('./build/**/*.*', function (err, files) {
   if (err) {
     return console.error(err);
   }
+  console.log(files);
   files.forEach(function (element, index, array) {
     var file = element.substr(6);
     console.log('Uploading: ' + file);
