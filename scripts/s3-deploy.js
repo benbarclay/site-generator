@@ -22,7 +22,7 @@ glob('./build/**/*.*', function (err, files) {
       Key: file,
       Body: fs.readFileSync(element),
       Metadata: {
-        Content-Type: mime.lookup(element);
+        'Content-Type': mime.lookup(element);
       }
     }, function (err, data) {
       if (err) {
