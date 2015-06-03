@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "build": "node index.js",
-    "test": "node tests/index.js",
-    "deploy": "node scripts/s3-deploy.js"
+    "test": "node ./tests/index.js",
+    "deploy": "node ./scripts/s3-deploy.js"
   },
   "devDependencies": {
     "aws-sdk": "^2.1.32",
