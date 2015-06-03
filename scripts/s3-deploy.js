@@ -21,9 +21,7 @@ glob('./build/**/*.*', function (err, files) {
       Bucket: 'benbarclay.co',
       Key: file,
       Body: fs.readFileSync(element),
-      Metadata: {
-        'Content-Type': mime.lookup(element)
-      }
+      ContentEncoding: mime.lookup(element)
     }, function (err, data) {
       if (err) {
         return console.error(err);
