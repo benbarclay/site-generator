@@ -1,6 +1,7 @@
 var AWS = require('aws-sdk');
 var glob = require('glob');
 var fs = require('fs');
+var mime = require('mime');
 
 AWS.config.update({region: 'ap-southeast-2'});
 
@@ -19,7 +20,10 @@ glob('./build/**/*.*', function (err, files) {
     S3.putObject({
       Bucket: 'benbarclay.co',
       Key: file,
-      Body: fs.readFileSync(element)
+      Body: fs.readFileSync(element),
+      Metadata: {
+        Content-Type: mime.lookup(element);
+      }
     }, function (err, data) {
       if (err) {
         return console.error(err);
