@@ -4,7 +4,9 @@ var fs = require('fs');
 
 var S3 = new AWS.S3({apiVersion: '2006-03-01'});
 
-glob('build/**/*.*', function (err, files) {
+console.log('Beginning deploy');
+
+glob('./build/**/*.*', function (err, files) {
   if (err) {
     return console.error(err);
   }
