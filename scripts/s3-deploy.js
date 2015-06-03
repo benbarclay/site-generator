@@ -2,6 +2,8 @@ var AWS = require('aws-sdk');
 var glob = require('glob');
 var fs = require('fs');
 
+AWS.config.update({region: 'ap-southeast-2'});
+
 var S3 = new AWS.S3({apiVersion: '2006-03-01'});
 
 console.log('Beginning deploy');
