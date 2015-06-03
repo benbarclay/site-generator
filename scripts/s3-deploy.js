@@ -12,11 +12,11 @@ glob('./build/**/*.*', function (err, files) {
   }
   console.log(files);
   files.forEach(function (element, index, array) {
-    var file = element.substr(6);
+    var file = element.substr(8);
     console.log('Uploading: ' + file);
     S3.putObject({
       Bucket: 'benbarclay.co',
-      Key: file ,
+      Key: file,
       Body: fs.readFileSync(element)
     }, function (err, data) {
       if (err) {
