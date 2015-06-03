@@ -10,6 +10,7 @@ glob('build/**/*.*', function (err, files) {
   }
   files.forEach(function (element, index, array) {
     var file = element.substr(6);
+    console.log('Uploading: ' + file);
     S3.putObject({
       Bucket: 'benbarclay.co',
       Key: file ,
@@ -19,6 +20,7 @@ glob('build/**/*.*', function (err, files) {
         return console.error(err);
       }
       console.log(data);
+      console.log('Completed: ' + file);
     });
   });
 });
