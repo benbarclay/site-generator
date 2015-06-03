@@ -37,7 +37,7 @@ metalsmith(__dirname)
   }))
   .build(function (err) {
     if (err) {
-      console.log(err);
+      console.error(err);
     } else {
       console.log('Site Built');
     }
